@@ -32,4 +32,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+
 /.idea
+
+# storybook
+/storybook-static
