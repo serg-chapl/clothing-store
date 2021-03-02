@@ -1,8 +1,9 @@
 const path = require('path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 module.exports = {
     webpackFinal: async (baseConfig, options) => {
-        const {module = {}} = baseConfig;
+        const { module = {} } = baseConfig;
 
         const newConfig = {
             ...baseConfig,
@@ -12,7 +13,7 @@ module.exports = {
             }
         };
 
-        //TypeScript
+        // TypeScript
         newConfig.module.rules.push({
             test: /\.(ts|tsx)$/,
             include: [
@@ -24,15 +25,13 @@ module.exports = {
                     options: {
                         presets: ['next/babel', require.resolve('babel-preset-react-app')],
                         plugins: ['react-docgen-typescript'],
-
                     },
                 },
             ],
         });
-
         newConfig.resolve.extensions.push('.ts', '.tsx');
 
-        //SCSS/CSS/SASS
+        // SCSS/CSS/SASS
         newConfig.module.rules.push({
             test: /\.((s*)css)|(sass)$/,
             loaders: [
@@ -40,11 +39,10 @@ module.exports = {
                 'css-loader',
                 'sass-loader'
             ],
-            include: path.resolve(__dirname, '../src/styles/global.sass'),
+            include: path.resolve(__dirname, '../public/styles/global.sass'),
         });
+        newConfig.resolve.plugins = newConfig.resolve.plugins.concat([new TsconfigPathsPlugin()])
 
         return newConfig;
-
     },
-
 };

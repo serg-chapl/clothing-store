@@ -6,9 +6,9 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:prettier/recommended",
-    "prettier/@typescripteclint"
+    "prettier/@typescript-eslint"
   ],
-  "plugins": ["@typescript-eslint", "react", "reacr-hooks"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks"],
   "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
@@ -34,27 +34,11 @@
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-var-requires": 8,
+    "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/no-non-null-assertion": "off",
     "react/display-name": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "@typescript-eslint/no-empty-function": [
-      "error",
-      {
-        "allow": [
-          "arrowFunctions"
-        ]
-      }
-    ]
+    "@typescript-eslint/no-empty-function": ["error", { "allow": ["arrowFunctions"] }]
   }
 }
-
-
-
-
-
-
-
-
-

@@ -1,4 +1,4 @@
--# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
@@ -11,6 +11,9 @@
 # next.js
 /.next/
 /out/
+
+# storybook
+/storybook-static
 
 # production
 /build
@@ -25,16 +28,10 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env
+.env.development
+.env.test
+.env.production
 
 # vercel
 .vercel
-
-
-/.idea
-
-# storybook
-/storybook-static
